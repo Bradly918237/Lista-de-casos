@@ -1,24 +1,14 @@
-/*8. Realiza un programa que pida una hora por teclado y que muestre luego buenos días, buenas
-tardes o buenas noches según la hora. Se utilizarán los tramos de 6 a 12, de 13 a 20 y de 21 a 5.
-respectivamente. Sólo se tienen en cuenta las horas, los minutos no se deben introducir por
-teclado.*/
+/*10. Realiza un programa que calcule el tiempo que tardará en caer un objeto desde una altura h.
+Aplica la fórmula sqrt((2 * h) / g)*/
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la hora: ");
-        int hora = scanner.nextInt();
-        String saludo;
-        if (hora >= 6 && hora <= 12) {
-            saludo = "Buenos días";
-        } else if (hora >= 13 && hora <= 20) {
-            saludo = "Buenas tardes";
-        } else {
-            saludo = "Buenas noches";
-        }
-        System.out.println(saludo);
+        System.out.print("Ingrese la altura en metros: ");
+        double altura = scanner.nextDouble();
+        double tiempo = Math.sqrt((2 * altura) / 9.8);
+        System.out.println("El tiempo de caída es: " + tiempo + " segundos");
         scanner.close();
     }
 }
-
