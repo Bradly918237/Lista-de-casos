@@ -1,24 +1,21 @@
-/*8. Realiza un programa que pida una hora por teclado y que muestre luego buenos días, buenas
-tardes o buenas noches según la hora. Se utilizarán los tramos de 6 a 12, de 13 a 20 y de 21 a 5.
-respectivamente. Sólo se tienen en cuenta las horas, los minutos no se deben introducir por
-teclado.*/
+/*9. Escribe un programa que calcule el salario semanal de un trabajador teniendo en cuenta que las
+horas ordinarias (40 primeras horas de trabajo) se pagan a 12 soles la hora. A partir de la hora
+41, se pagan a 16 soles la hora.*/
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la hora: ");
-        int hora = scanner.nextInt();
-        String saludo;
-        if (hora >= 6 && hora <= 12) {
-            saludo = "Buenos días";
-        } else if (hora >= 13 && hora <= 20) {
-            saludo = "Buenas tardes";
+        System.out.print("Ingrese las horas trabajadas: ");
+        int horasTrabajadas = scanner.nextInt();
+        double salarioSemanal;
+        if (horasTrabajadas <= 40) {
+            salarioSemanal = horasTrabajadas * 12;
         } else {
-            saludo = "Buenas noches";
+            int horasExtras = horasTrabajadas - 40;
+            salarioSemanal = (40 * 12) + (horasExtras * 16);
         }
-        System.out.println(saludo);
+        System.out.println("El salario semanal es: " + salarioSemanal + " soles");
         scanner.close();
     }
 }
-
