@@ -1,18 +1,22 @@
-/*7. Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la
-asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota
-del primer examen cuenta el 40% y la del segundo examen un 60%. En la imagen se muestra el
-funcionamiento del programa.*/
+/*12. Realiza un programa que diga si un número introducido por teclado es par y/o divisible entre 5.*/
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la nota deseada: ");
-        double notaDeseada = scanner.nextDouble();
-        System.out.print("Ingrese la nota del primer examen: ");
-        double notaPrimerExamen = scanner.nextDouble();
-        double notaSegundoExamen = (notaDeseada - (notaPrimerExamen * 0.4)) / 0.6;
-        System.out.println("La nota necesaria en el segundo examen es: " + notaSegundoExamen);
+        System.out.print("Ingrese un número: ");
+        int numero = scanner.nextInt();
+        if (numero % 2 == 0) {
+            System.out.println("El número es par.");
+        } else {
+            System.out.println("El número no es par.");
+        }
+
+        if (numero % 5 == 0) {
+            System.out.println("El número es divisible entre 5.");
+        } else {
+            System.out.println("El número no es divisible entre 5.");
+        }
         scanner.close();
     }
 }
